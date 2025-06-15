@@ -4,6 +4,10 @@
 from transformers import pipeline
 import streamlit as st
 from PIL import Image
+import os
+
+
+os.environ["STREAMLIT_SERVER_ENABLE_FILE_WATCHER"] = "false"  # Disables problematic inspection
 
 # Set cache directory
 os.environ["MF_HOME"] = "/app/cache"
