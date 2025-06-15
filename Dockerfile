@@ -1,5 +1,9 @@
 FROM python:3.9-slim
 
+ENV PYTHONUNBUFFERED=1 \
+    PORT=8000 \
+    HF_HOME=/home/user/huggingface
+
 WORKDIR /app
 
 RUN apt-get update && apt-get install -y \
@@ -15,10 +19,6 @@ COPY src/ ./src/
 RUN pip3 install -r requirements.txt
 
 EXPOSE 8501
-
-ENV PYTHONUNBUFFERED=1 \
-    PORT=8000 \
-    HF_HOME=/home/user/huggingface
 
 HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health
 
