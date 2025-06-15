@@ -2,15 +2,13 @@
 """# Image-To-Text : Streamlit Demo"""
 
 from transformers import pipeline
-from transformers import AutoTokenizer, AutoModelForImageTextToText
 import streamlit as st
 from PIL import Image
 
 # Initialize the model only once using Streamlit cache
 @st.cache_resource
 
-tokenizer = AutoTokenizer.from_pretrained("ydshieh/vit-gpt2-coco-en")
-model = AutoModelForImageTextToText.from_pretrained("ydshieh/vit-gpt2-coco-en")
+pipe = pipeline("image-to-text", model="ydshieh/vit-gpt2-coco-en")
 
 st.title('Image to Text')
 
