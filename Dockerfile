@@ -2,7 +2,7 @@ FROM python:3.9-slim
 
 ENV PYTHONUNBUFFERED=1 \
     PORT=8000 \
-    TRANSFORMERS_CACHE=/app/cache
+    HF_HOME=/app/cache
 
 WORKDIR /app
 
