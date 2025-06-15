@@ -39,7 +39,7 @@ upload_file = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
 
 # Display image immediately after upload
 if upload_file is not None:
-    st.image(upload_file, caption="Uploaded Image", use_column_width=True)
+    st.image(upload_file, caption="Uploaded Image", use_container_width=True)
 
 # Separate caption generation button
 if st.button('Extract Caption', disabled=(upload_file is None)):
