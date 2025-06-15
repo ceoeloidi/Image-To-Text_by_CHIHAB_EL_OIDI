@@ -9,7 +9,7 @@ from PIL import Image
 @st.cache_resource
 
 def load_model():
-    return pipeline("image-to-text", model="./download.sh")
+    return pipeline("image-to-text", model="ydshieh/vit-gpt2-coco-en")
 
 captioner = load_model()
 
