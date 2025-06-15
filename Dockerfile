@@ -2,9 +2,12 @@ FROM python:3.9-slim
 
 ENV PYTHONUNBUFFERED=1 \
     PORT=8000 \
-    HF_HOME=/home/user/huggingface
+    TRANSFORMERS_CACHE=/app/cache
 
 WORKDIR /app
+
+# Create cache directory with write permissions
+RUN mkdir -p /app/cache && chmod 777 /app/cache
 
 RUN apt-get update && apt-get install -y \
     build-essential \
