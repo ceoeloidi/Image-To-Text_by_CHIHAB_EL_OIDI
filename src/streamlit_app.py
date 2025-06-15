@@ -8,7 +8,10 @@ from PIL import Image
 # Initialize the model only once using Streamlit cache
 @st.cache_resource
 
-pipe = pipeline("image-to-text", model="ydshieh/vit-gpt2-coco-en")
+def load_model():
+    return pipeline("image-to-text", model="./download.sh")
+
+captioner = load_model()
 
 st.title('Image to Text')
 
