@@ -1,7 +1,7 @@
 FROM python:3.9-slim
 
 ENV PYTHONUNBUFFERED=1 \
-    PORT=8000 \
+    PORT=8501 \
     HF_HOME=/app/cache
 
 WORKDIR /app
