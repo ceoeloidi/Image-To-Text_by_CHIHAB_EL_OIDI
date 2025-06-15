@@ -5,6 +5,10 @@ from transformers import pipeline
 import streamlit as st
 from PIL import Image
 
+# Set cache directory
+os.environ["MF_HOME"] = "/app/cache"
+
+
 # Initialize the model only once using Streamlit cache
 @st.cache_resource
 def load_model():
